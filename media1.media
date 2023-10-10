@@ -1,0 +1,17 @@
+@media(max-width: 753px){
+  .skillcontainer .wrapper{
+    max-width: 700px;
+  }
+  .skillcontainer  .wrapper .card{
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+}
+@media(max-width: 505px){
+  .skillcontainer .wrapper{
+    max-width: 500px;
+  }
+  .skillcontainer .wrapper .card{
+    width: 100%;
+  }
+}
