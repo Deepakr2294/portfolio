@@ -592,6 +592,92 @@ canvas {
 
 /* skill section closed */
 /*  project section start */
+.work-section {
+  padding-bottom: 5rem;
+  padding-top: 6rem;
+    display: flex;
+  flex-direction: column;
+}
+
+.work-title {
+  padding-bottom: 4rem;
+  font-size: 3em;
+  text-align: center;
+}
+
+.splide__slide img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 400ms;
+  transform: scale(0.8);
+  border: 1px solid #1212123f;
+}
+
+.splide__slide.is-active img {
+  transform: scale(1);
+}
+
+.splide__slide .content-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrapper .content {
+  height: 15%;
+  width: 100%;
+  position: absolute;
+  bottom: 8.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.8);
+  border-radius: 0 0 8px 8px;
+  backdrop-filter: blur(3px);
+  background-color: #00000017;
+}
+
+.splide__slide.is-active .content-wrapper .content {
+  transform: scale(1);
+  bottom: 0;
+  transition: all 0.5s ease-out;
+}
+
+.splide__slide.is-active .content-wrapper:hover .content {
+  height: 92%;
+  width: 92%;
+  bottom: 4%;
+  border-radius: 12px;
+  transition: all 0.5s ease-in;
+}
+
+.content-wrapper .content a {
+  font-family: var(--secondary-font);
+  font-size: 2em;
+  color: #ffffff;
+}
+
+
+@media (min-width: 600px) {
+  .splide .splide__arrow {
+      height: 40px;
+      width: 40px;
+  }
+
+  .splide .splide__arrow svg {
+      height: 24px;
+      width: 24px;
+  }
+}
+
+
+@media (max-width: 475px) {
+  .work-section {
+      font-size: 10px;
+  }
+}
 .sec4 {
   width: 100%;
   margin-left: auto;
@@ -606,10 +692,8 @@ canvas {
 
 }
 
-.sec-4f {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1350px;
+.sec-4-1{
+  margin-bottom: 50px;
 }
 
 .sec-4-1 h2 {
@@ -617,35 +701,6 @@ canvas {
   margin: 20px;
 
 }
-
-.swiper-container {
-  width: 40%;
-  margin: 0 auto;
-}
-
-.slide-content {
-  line-height: 2rem;
-}
-
-.slide-content h4 {
-  color: rgb(80, 17, 216);
-}
-
-.slide-content h3 {
-  color: rgb(80, 17, 216);
-}
-
-.slide-content h5 {
-  color: rgb(76, 71, 88);
-}
-
-.swiper-slide img {
-  border-radius: 9px;
-  width: 100%;
-  height: 350px;
-  object-fit: contain;
-}
-
 /* project section closed */
 
 /* contact page  start*/

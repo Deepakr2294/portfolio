@@ -44,31 +44,30 @@ document.querySelectorAll(".nav-link").forEach((link) =>
 
 // nav links js
 
-// // project  section start
-  document.addEventListener("DOMContentLoaded", function () {
-    const swiper = new Swiper('.swiper-container', {
-      loop: true,
-      effect: "cube",
-      cubeEffect: {
-        slideShadows: true,
-        shadow: true,
-        shadowOffset: 100,
-        shadowScale: 0.6,
+// // // project  section start
+
+document.addEventListener('DOMContentLoaded', function () {
+  let splide = new Splide(".splide", {
+      type: "loop",
+      perPage: 3,
+      focus: "center",
+      updateOnMove: true,
+      padding: "2%",
+      pagination: false,
+      breakpoints: {
+          1280: {
+              perPage: 1,
+              padding: "30%",
+          },
+          678: {
+              padding: "18%",
+          },
       },
-      grabCursor: true,
-      speed: 1500,
-      // autoplay: {
-      //   delay: 2000,
-      // },
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
   });
+
+  splide.mount();
+});
+// project section closed 
 
 
 
