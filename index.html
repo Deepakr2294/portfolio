@@ -24,6 +24,7 @@
 <body>
     <main id="main-section">
 
+
         <nav>
             <div class="nav-head  ">
                 <div class="logo logo1 ">
@@ -221,7 +222,7 @@
         </section>
 
         <!-- project section start -->
-      
+
         <section id="work" class="work-section" id="project">
             <div class="sec-4-1 d-flex justify-c" id="project">
                 <h2> <i class="fa-solid fa-scroll"></i>Projects <span style=" color: purple;">Made</span></h2>
@@ -282,7 +283,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- project section closed -->
         <!-- contact page -->
 
@@ -301,26 +302,29 @@
                         </div>
 
                     </div>
-                    <div class="contact-form-wrapper ">
-                        <form>
+                    <div class="contact-form-wrapper">
+                        <form method="post" name="google-sheet">
                             <div class="form-item" data-aos="fade-down">
-                                <input type="text" name="sender" required>
+                                <input type="text" name="Name" required>
                                 <label>Name:</label>
                             </div>
                             <div class="form-item" data-aos="fade-down">
-                                <input type="text" name="email" required>
+                                <input type="email" name="Email" required> <!-- Use type="email" for email input -->
                                 <label>Email:</label>
                             </div>
                             <div class="form-item" data-aos="fade-down">
-                                <textarea class="" name="message" required></textarea>
+                                <textarea class="" name="Message" required></textarea>
                                 <label>Message:</label>
                             </div>
-                            <button class="submit-btn" data-aos="fade-down">Send</button>
+                            <!-- <button class="submit-btn" type="submit" name="submit" data-aos="fade-down">Send</button> -->
+                            <input class="submit-btn" type="submit" name="submit" value="Submit" data-aos="fade-down">
+                            <!-- Corrected the value attribute -->
                         </form>
                     </div>
+
                 </div>
             </section>
-            
+
             <footer class="footer">
                 <div class="containerf">
                     <div class="row justify-c">
@@ -390,6 +394,28 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
         }
+        // google sheet data get code start
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz9kkgu04LdihhsKeqOBrmuYC2KvdAc3YQpOPKvE4jqTvHsr5we0Y6r5mAy3_W8Az48cg/exec';
+        const form = document.forms['google-sheet'];
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    if (response.ok) {
+                        // Success message
+                        alert("Thanks for contacting us! We will get back to you soon.");
+                        // Reset the form after successful submission
+                        form.reset();
+                    } else {
+                        // Error message
+                        alert("Error occurred, please try again later.");
+                    }
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+        // google sheet data get  code End
+
     </script>
 
 
